@@ -1,0 +1,146 @@
+{
+  "folders": [
+    {
+      "name": "CodeRunner",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": true,
+    "editor.fontSize": 14,
+    "editor.fontFamily": "'Fira Code', 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "'Fira Code', 'Courier New', monospace",
+    "files.associations": {
+      "*.tsx": "typescriptreact",
+      "*.ts": "typescript"
+    },
+    "emmet.includeLanguages": {
+      "typescriptreact": "html"
+    },
+    "tailwindCSS.includeLanguages": {
+      "typescript": "typescript",
+      "typescriptreact": "typescriptreact"
+    },
+    "tailwindCSS.experimental.classRegex": [
+      ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+      ["className\\s*=\\s*[\"'`]([^\"'`]*)[\"'`]", "([a-zA-Z0-9\\-:]+)"]
+    ],
+    "css.validate": false,
+    "scss.validate": false,
+    "less.validate": false,
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "typescript.suggest.autoImports": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.suggest.autoImports": true,
+    "javascript.updateImportsOnFileMove.enabled": "always"
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "bradlc.vscode-tailwindcss",
+      "ms-vscode.vscode-typescript-next",
+      "formulahendry.auto-rename-tag",
+      "christian-kohler.path-intellisense",
+      "ms-vscode.vscode-json",
+      "ms-vscode.vscode-css-peek",
+      "zignd.html-css-class-completion",
+      "ms-vscode.vscode-eslint",
+      "ms-vscode.vscode-typescript-next"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Start Development Server",
+        "type": "shell",
+        "command": "npm",
+        "args": ["run", "dev"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared",
+          "showReuseMessage": true,
+          "clear": false
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Build Project",
+        "type": "shell",
+        "command": "npm",
+        "args": ["run", "build"],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Lint Code",
+        "type": "shell",
+        "command": "npm",
+        "args": ["run", "lint"],
+        "group": "test",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Install Dependencies",
+        "type": "shell",
+        "command": "npm",
+        "args": ["install"],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        },
+        "problemMatcher": []
+      }
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Launch Chrome",
+        "request": "launch",
+        "type": "chrome",
+        "url": "http://localhost:5173",
+        "webRoot": "${workspaceFolder}/src",
+        "sourceMaps": true,
+        "smartStep": true,
+        "skipFiles": ["<node_internals>/**"]
+      }
+    ]
+  }
+}
